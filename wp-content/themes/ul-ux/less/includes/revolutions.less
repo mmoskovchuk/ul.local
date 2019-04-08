@@ -1,0 +1,202 @@
+.revolutions{
+    padding-top: 74px;
+    padding-bottom: 62px;
+    box-sizing: unset !important;
+    &__header{
+
+        display: flex;
+        align-items: flex-end;
+        line-height: 1;
+        margin-bottom: 40px;
+
+        .header__breadcrumbs{
+            position: absolute;
+        }
+
+        .header__title{
+            font-family: @pt-serif-r;
+            margin: 0 auto;
+            font-size: 55px;
+            color: #000;
+        }
+    }
+
+    .revolutions__body{
+
+        .revolution__wrapper{
+            max-height: 577px;
+            min-height: 577px;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;  
+            font-family: PTSerif;
+            color: #fff;   
+            
+            .revolution__title{
+                font-family: @pt-serif-r;
+                font-size: 55px;
+                text-align: center;
+            }
+            .revolution__action{
+                font-family: @pt-serif-r;
+                margin-top: 76px;
+                font-size: 24px;
+                padding-bottom: 20px;
+                border-bottom: 5px solid #fff;
+                line-height: 1.1;
+                cursor: pointer;
+                transition: 300ms;
+
+                display: flex;
+                align-items: center;
+                position: relative;
+
+                &:after{
+                    content: "";
+                    width: 26px;
+                    height: 26px;
+                    background: url(../img/revolutions/arrow-up.svg) no-repeat;
+                    background-size: contain;
+                    // margin-left: 16px;
+                    display: none;
+                    transition: 300ms;
+                    position: absolute;
+                    left: -42px;
+                    bottom: 40%;
+                }
+                &:before{
+                    content: "";
+                    width: 26px;
+                    height: 26px;
+                    background: url(../img/revolutions/arrow-up.svg) no-repeat;
+                    background-size: contain;
+                    margin-right: 16px;
+                    display: none;
+                    transition: 300ms;
+                    position: absolute;
+                    right: -60px;
+                    bottom: 40%;
+                }
+
+                &:hover{
+                    &:after{
+                        display: block;
+                        transform: rotate(180deg);
+                    }
+                    &:before{
+                        display: block;
+                        transform: rotate(180deg);
+                    }
+                }
+
+                &.active{
+                    border-bottom-color: transparent;
+                    &:after{
+                        display: block;
+                        transform: unset;
+                    }
+                    &:before{
+                        display: block;
+                        transform: unset;
+                    }
+                }
+            }
+        }
+        .revolution__description{
+            font-family: @pt-serif-r;
+            padding: 50px 5% 50px;  
+            line-height: 1.76;
+        }
+    }
+}
+
+@media only screen and (max-width: 1400px) {
+    .revolutions{
+        &__header{
+            .header__title{
+                font-size: 44px;
+            }
+        }
+
+    }
+}
+
+@media only screen and (max-width: @tablet-xl) {
+    .revolutions{
+        padding: 0;
+
+        &__header{
+            flex-direction: column;
+            align-items: end;
+            padding-left: 30px;
+            padding-right: 30px;
+
+            .header__breadcrumbs{
+                position: relative;
+                margin-bottom: 10px;
+            }
+
+            .header__title{
+                margin:  unset;
+                font-size: 36px;
+            }
+        }
+        .revolutions__body{
+
+            .revolution__wrapper{
+                max-height: 290px;
+                min-height: 290px;
+
+                .revolution__title{
+                    font-size: 36px;
+                }
+                .revolution__action{
+                    font-size: 18px;
+                    margin-top: 40px;
+                }
+            }
+            .revolution__description{
+                padding: 30px 5% 30px;  
+            }
+        }
+        .scroll-up-btn{
+            display: none !important;
+        }
+    }
+}
+
+@media only screen and (max-width: @mobile-xl) {
+
+    .revolutions{
+        
+        &__header{
+            padding-left: 16px;
+            margin-bottom: 30px;
+            .header__title{
+                font-size: 36px;
+            }
+        }
+        .revolutions__body{
+
+            .revolution__wrapper{
+
+                .revolution__title{
+                    font-size: 22px;
+                    text-align: center;
+                }
+                .revolution__action{
+                    font-size: 16px;
+                    margin-top: 40px;
+                }
+            }
+            .revolution__description{
+                padding: 20px 5% 20px;  
+            }
+        }
+    }
+}

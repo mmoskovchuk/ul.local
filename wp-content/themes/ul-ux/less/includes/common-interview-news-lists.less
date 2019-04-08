@@ -1,0 +1,213 @@
+.interview-list, .news-list{
+    display: flex;
+    flex-direction: column;
+    padding-top: 74px;
+    padding-bottom: 62px;
+
+    .list__header{
+
+        display: flex;
+        align-items: flex-end;
+        line-height: 1;
+        margin-bottom: 40px;
+
+        .header__breadcrumbs{
+            position: absolute;
+        }
+
+        .header__title{
+            font-family: @pt-serif-r;
+            margin: 0 auto;
+            font-size: 55px;
+            color: #000;
+        }
+    }
+
+    .list__body{
+
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+
+        .body__item{
+            padding: 30px;
+            width: ~"calc(100%/2 - 105px)";
+            border: solid 5px rgba(114, 114, 114, 0.1);
+            margin-bottom: 50px;
+            
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            .item__info-wrapper{
+                display: flex;
+                flex-direction: column;
+            }
+
+            .img__wrapper{
+                width: 100%;
+            }
+
+            .item__img{
+                max-width: 100%;
+                cursor: pointer;
+            }
+
+            .item__title{
+                cursor: pointer;
+                margin-top: 50px;
+                font-size: 24px;
+                color:#000;
+                font-weight: bold;
+                font-family: @pt-serif-b;
+            }
+
+            .item__description{
+                font-size: 16px;
+                line-height: 1.76;
+                color: #000;
+                margin-top: 37px;
+                font-family: @pt-serif-r;
+            }
+
+            .item__link-to-read{
+                margin-top: 30px;
+                color: #000000;
+                font-size: 16px;
+                font-weight: bold;
+                text-decoration: none;
+                width: fit-content;
+                font-family: @pt-serif-r;
+            }
+        }
+
+        .body__pagination{
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+
+            .pagination__btn{
+                cursor: pointer;
+                font-size: 16px;
+                font-weight: bold;
+                color: #000;
+            }
+        }
+    }
+}
+
+
+@media only screen and (max-width: @tablet-xl) {
+    .interview-list, .news-list{
+        padding-bottom: 50px;
+        .list{
+            padding: 0;
+    
+            &__header{
+                padding-left: 30px;
+                padding-right: 30px;
+                align-items: center;
+    
+                .header__title{
+                    font-size: 36px;
+                }
+            }
+    
+            &__body{
+    
+                .body__item{
+                    padding-top: 0;
+                    width: 100%;
+                    border: unset;
+                    border-bottom: solid 2px rgba(114, 114, 114, 0.1);
+                
+                    .item__title{
+                        font-size: 18px;
+                        margin-top: 30px;
+                    }
+                    
+                    .item__description{
+                        font-size: 16px;
+                        margin-top: 16px;
+                    }
+
+                }
+                .body__pagination{
+                    padding: 0 30px 0px;
+        
+                    .pagination__btn{
+                        font-size: 16px;
+                        padding-bottom: 16px;
+                        border-bottom-width: 4px;
+                    }
+                }
+            }
+        }
+        .scroll-up-btn{
+            display: none !important;
+        }
+    }
+}
+
+@media only screen and (max-width: @mobile-xl) {
+    .interview-list, .news-list{
+        padding-bottom: 0px;
+        .list{
+        
+            &__header{
+                flex-direction: column;
+                align-items: end;
+                padding-left: 16px;
+    
+                .header__breadcrumbs{
+                    position: relative;
+                    margin-bottom: 10px;
+                }
+    
+                .header__title{
+                    margin:  unset;
+                    font-size: 36px;
+                }
+            }
+    
+            &__body{
+    
+                .body__item{
+                    padding: 0 16px;
+                    margin-bottom: 16px;
+    
+                    &:last-child{
+                        margin-bottom: 0;
+                    }
+    
+                    .item__link-to-read{
+                        font-size: 16px;
+                        margin-top: 20px;
+                        border-bottom-width: 2px;
+                        padding-right: 16px;
+                        margin-bottom: 20px;
+                    }
+    
+                    .item__title{
+                        margin-top: 10px;
+                        font-size: 16px;
+                    }
+                }
+                
+                .body__pagination{
+                    padding: 8px 16px 24px;
+    
+                    .pagination__btn{
+                        font-size: 12px;
+                        padding-bottom: 0;
+                        border-bottom-width: 2px;
+                    }
+                }
+            }
+        }
+    }
+
+}

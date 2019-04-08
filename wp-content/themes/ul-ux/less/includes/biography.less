@@ -1,0 +1,226 @@
+.biography{
+    padding-top: 74px;
+    padding-bottom: 62px;
+    &__header{
+
+        display: flex;
+        align-items: flex-end;
+        line-height: 1;
+        margin-bottom: 40px;
+
+        .header__breadcrumbs{
+            position: absolute;
+        }
+
+        .header__title{
+            font-family: @pt-serif-r;
+            margin: 0 auto;
+            font-size: 55px;
+            color: #000;
+        }
+    }
+
+    .biography__list-wrapper{
+        font-family: @pt-serif-r;
+
+        .list__item{
+            display: flex;
+            align-items: baseline;
+            margin-bottom: 40px;
+
+            &.list-header{
+                margin-bottom: 33px;
+
+                .title{
+            
+                    font-family: @pt-serif-b;
+                    line-height: 1.46;
+                    font-size: 24px;
+                    font-weight: bold;
+                    color: #000;
+                }
+            }
+
+
+        }
+
+        .item__date{
+            min-width: 98px;
+            margin-right: 20px;
+            font-size: 24px;
+            color: #727272;
+        }
+
+        .item__description{
+            line-height: 1.76;
+            font-size: 16px;
+            color: #000;
+
+            >p{
+                margin-bottom: 20px;
+
+                &:last-child{
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+
+    .biography__photos{
+        margin-top: 76px;
+        font-family: @pt-serif-r;
+        margin-left: 118px;
+
+        .photos__title{
+            text-align: center;
+            font-size: 55px;
+        }
+
+        .photos__wrapper{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: 45px;
+        }
+
+        .photo{
+            margin-right: 80px;
+            margin-bottom: 45px;
+            max-width: ~"calc(100% / 3 - 80px)";
+            min-width: 189px;
+        }
+
+        .photo__img-wrapper{
+            
+
+            .photo__img{
+                max-width: 100%;
+                // height: 250px;
+            }
+        }
+        .photo__link{
+            cursor: pointer;
+        }
+
+        .photo__download{
+            margin-top: 15px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+
+
+            .icon-download{
+                background: url("../img/socials/download.svg") no-repeat;
+                min-width: 16px;
+                min-height: 16px;
+                background-size: contain;
+                background-position: center;
+                margin-right: 15px;
+            }
+
+            .download-text{
+                font-size: 16px;
+                color: #727272;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: @tablet-xl) {
+    .biography{
+        padding-left: 30px;
+        padding-right: 30px;
+        padding-bottom: 48px;
+        .biography__header{
+            align-items: center;
+            .header__title{
+                font-size: 36px;
+            }
+        }
+
+        .scroll-up-btn{
+            margin-top: 0px;
+            position: relative;
+            width: max-content;
+            left: 0;
+            top: 0;
+        }
+
+        .biography__list-wrapper{
+
+            .list-header{
+                .item__date{
+                    display: none;
+                }
+            }
+
+            .item__description{
+                font-size: 16px;
+            }
+        } 
+
+        .biography__photos{
+            margin-top: 50px;
+            margin-left: 0;
+
+            .photos__title{
+                font-size: 36px;
+            }
+            .photo__img-wrapper .photo__img{
+                // height: 220px;
+            }
+
+            .photos__wrapper{
+                justify-content: space-between;
+            }
+
+            .photo{
+                max-width: ~"calc(100% / 2 - 20px)";
+                margin-right: 0;
+            }
+    }
+}
+}
+
+@media only screen and (max-width: @mobile-xl) {
+
+    .biography{
+        padding-left: 15px;
+        padding-right: 15px;
+        .biography__header{
+            flex-direction: column;
+            align-items: flex-start;
+            margin-bottom: 20px;
+
+            .header__breadcrumbs{
+                position: relative;
+                margin-bottom: 10px;
+            }
+
+            .header__title{
+                margin:  unset;
+                font-size: 36px;
+            }
+        }
+
+        .biography__list-wrapper{
+             .list__item{
+                flex-direction: column;
+                margin-bottom: 20px;
+            }
+
+            .item__date{
+                margin-bottom: 15px;
+                font-size: 22px;
+            }
+
+            .list__item.list-header .title{
+                font-size: 18px;
+            }
+        }
+
+        .biography__photos .photo{
+            max-width: unset;
+        }
+    }
+}

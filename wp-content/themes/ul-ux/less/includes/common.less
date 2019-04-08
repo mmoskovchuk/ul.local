@@ -1,0 +1,124 @@
+.scroll-up-btn{
+    color: #727272;
+    font-size: 16px;
+
+    position: fixed;
+    bottom: 60px;
+    left: 140px;
+    display: none;
+    line-height: 1;
+
+    font-family: @pt-serif-r;
+    cursor: pointer;
+    border-bottom: 1px solid #727272;
+    transition: 150ms;
+    &:hover{
+        border-bottom-color: #000; 
+    }
+}
+
+.link-with-animated-border{
+
+    &.breadcrumb{
+        
+        font-family: @pt-serif-r;
+        &:after{
+            height: 1px;
+        }
+    }
+
+    &.item__link-to-read, &.pagination__btn, &.book__download, &.photo__link{
+        
+        font-family: @pt-serif-r;
+        &:after{
+            height: 6px;
+            margin-top: 20px;
+        }
+    }
+
+    &:after {
+        content: '';
+        width: 100%;
+        display: block;
+        background: rgba(114, 114, 114, 0.3);
+        transition: 300ms;
+    }
+    &:hover:after {
+        background: #000;
+        animation-name: animated-link;
+        animation-duration: 300ms;
+        animation-iteration-count: 1;
+    }
+}
+
+
+
+.content-wrapper{
+    //padding for whole content in page
+    // for not to be under menu
+
+    
+    padding-left: 228px;
+    padding-right: 140px;
+    margin: 0 auto;
+    box-sizing: unset;
+
+    .header{
+        .header__breadcrumbs{
+            font-family: @pt-serif-r;
+            color: #727272;
+            font-size: 16px;
+            text-decoration: none;
+        }
+    }
+}
+
+@media only screen and (max-width: 1920px) {
+    .content-wrapper{
+        box-sizing: border-box !important;
+    }
+}
+
+
+@media only screen and (max-width: @tablet-xl) {
+    .content-wrapper{
+        padding-left: unset;
+        padding-right: unset;
+        padding-top: 130px !important;
+
+        .header{
+            .header__breadcrumbs{
+                font-size: 16px;
+            }
+        }
+    }
+    .scroll-up-btn{
+        //display: none !important;
+    }
+}
+
+@media only screen and (max-width: @mobile-xl) {
+    .link-with-animated-border{
+
+        &.item__link-to-read, &.pagination__btn{
+            &:after{
+                height: 2px;
+                margin-top: 10px;
+            }
+        }
+    }
+    .content-wrapper{
+        padding-left: unset;
+        padding-top: 65px !important;
+    }
+}
+
+@keyframes animated-link{
+    0%{
+        width: 0%;
+    }
+
+    100%{
+        width: 100%;
+    }
+}
