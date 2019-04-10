@@ -6,6 +6,30 @@
     width: 100%;
     img{
         width: 100%;
+        max-height: 387px;
+        object-fit: cover;
+        @media only screen and (max-width: 2560px) {
+            max-height: 100%;
+        }
+        @media only screen and (max-width: 1440px) {
+            max-height: 490px;
+        }
+        @media only screen and (max-width: @tablet-xl) {
+            max-height: 387px;
+        }
+        @media only screen and (max-width: @mobile-xl) {
+            max-height: 387px;
+        }
+    }
+}
+.breadcrumb {
+    > div {
+        display: flex;
+    }
+    [property="itemListElement"] {
+        a {
+            text-decoration: none;
+        }
     }
 }
 .news__main-img__mobile{
@@ -101,8 +125,12 @@
             .body__video{
                 display: flex;
                 justify-content: center;
-                height: 628px;
+                height: auto;
                 margin: 50px;
+                iframe {
+                    width: 100% !important;
+                    min-height: 628px !important;
+                }
             }
         }
     }
@@ -184,8 +212,12 @@
                     font-size: 16px;
                 }
                 .body__video{
-                    height: 400px;
+                    height: auto;
                     margin: 50px 0;
+                    iframe {
+                        width: 100% !important;
+                        min-height: 400px !important;
+                    }
                 }
                 .body__img{
                     .img{
@@ -249,8 +281,12 @@
                     margin-bottom: 24px;
                 }
                 .body__video{
-                    height: 164px;
+                    height: auto;
                     margin: 25px 0;
+                    iframe {
+                        width: 100% !important;
+                        min-height: 164px !important;
+                    }
                 }
                 .body__text__bold{
                     margin-top: 20px;
@@ -316,6 +352,17 @@
         margin-bottom: 20px;
         img{
             width: 100%;
+            height: auto;
         }
+    }
+    .breadcrumb span[property="name"] {
+        display: inline-block;
+        padding: 0;
+        margin-top: -3px;
+        vertical-align: middle;
+        max-width: 65px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 }

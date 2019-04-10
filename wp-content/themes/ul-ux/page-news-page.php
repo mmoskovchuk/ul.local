@@ -11,35 +11,6 @@
 
 <body>
 
-    <!--MENU-->
-    <div class="ul-menu__wrap" id="nav-block">
-        <input type="checkbox" id="hmt" class="ul-menu__hidden-ticker">
-        <label class="ul-menu__btn" for="hmt">
-            <span class="first"></span>
-            <span class="second"></span>
-            <span class="third"></span>
-        </label>
-        <ul class="ul-menu__hidden">
-            <p class="ul-menu__title"><a href="#" class="link-to-page">Юрій Луценко</a></p>
-            <nav id="nav">
-                <ul>
-                    <li><a href="#" class="link-to-page">Біографія</a></li>
-                    <li><a href="#" class="link-to-page">Українські революції</a></li>
-                    <li><a href="#" class="link-to-page">Новини</a></li>
-                    <li><a href="#" class="link-to-page">Інтерв’ю</a></li>
-                    <li><a href="#" class="link-to-page">Книги</a></li>
-                </ul>
-            </nav>
-            <div class="ul-menu__social">
-                <ul>
-                    <li><a href="#" target="_blank"></a></li>
-                    <li><a href="#" target="_blank"></a></li>
-                    <li><a href="#" target="_blank"></a></li>
-                </ul>
-            </div>
-        </ul>
-    </div>
-
     <!-- NEWS PAGe -->
 
     <div class="news__main-img__desktop">
@@ -87,64 +58,6 @@
                         казначейства.
                     </div>
 
-                    <!-- <div class="body__img">
-                        <img src="../img/default-img.png" alt="" class="img">
-                        <div class="img__label">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam ad repudiandae illo
-                            reprehenderit! Praesentium, officiis?
-                        </div>
-                    </div>
-
-                    <div class="body__text__bold">
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa a fugiat id nihil! Laboriosam
-                        maxime eos recusandae provident eaque commodi?
-                    </div>
-
-                    <div class="body__header">
-                        Lorem ipsum dolor sit amet consectetur.
-                    </div>
-
-                    <div class="body__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati odio
-                        quasi rem ducimus possimus! Possimus nobis culpa alias provident voluptatum, deserunt quis
-                        repellat praesentium quas expedita, quo adipisci eaque incidunt quam nemo sunt, eum distinctio
-                        unde asperiores delectus! Quos, in illo. Maxime nam dolores saepe ea non esse iste! Optio soluta
-                        illo totam dolorum cum animi odio aliquam! Animi eligendi debitis eos ratione voluptas pariatur,
-                        temporibus dolor unde nam officiis laboriosam, perspiciatis, beatae quidem fugit aliquam.
-                        Maiores ipsa repudiandae non incidunt quae nam id dolorem necessitatibus harum sint officiis
-                        accusamus, impedit fugit placeat aspernatur, ratione labore cum quam cupiditate reiciendis.
-                    </div>
-
-                    <div class="body__img">
-                        <img src="../img/cat.png" alt="" class="img">
-                        <div class="img__label">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea quia qui eum ipsa sapiente?
-                        </div>
-                    </div>
-
-                    <div class="body__text__bold">
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa a fugiat id nihil! Laboriosam
-                        maxime eos recusandae provident eaque commodi?
-                    </div>
-
-                    <div class="body__text">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam sapiente amet corporis. Nulla
-                        sed id illum quam, recusandae enim architecto. Fuga consectetur dicta magnam, veniam nemo
-                        labore, pariatur a vel temporibus, odio est ut explicabo nisi adipisci blanditiis harum tempora
-                        voluptatibus quod mollitia illum. Molestias deserunt est quos, quo minus ratione necessitatibus
-                        consequuntur nemo cupiditate maxime, natus nobis dolorem aliquam. Ut molestiae exercitationem
-                        deserunt dicta expedita consequuntur in quas quae est quam voluptates eius, blanditiis
-                        cupiditate ipsum et ipsam rerum impedit reprehenderit doloribus voluptatum laborum, hic quod?
-                        Vitae recusandae dolores quam itaque quasi, temporibus voluptates dolorum in fuga ad atque
-                        accusantium sint? Pariatur minus eligendi accusantium modi aut officiis, sint ab, aperiam
-                        officia voluptate, error soluta a molestiae temporibus illum hic tempora. Reiciendis, repellat
-                        fugit neque odit veritatis quas sapiente, deserunt tempore suscipit obcaecati aliquid tempora
-                        consequatur voluptatum ad repudiandae dignissimos hic magnam autem placeat reprehenderit
-                        assumenda eum! Nulla in iure quam illo, illum temporibus natus aliquid assumenda iste libero
-                        saepe numquam nisi doloribus quidem esse quas veritatis eum maiores voluptas, accusantium vero.
-                        Praesentium illo pariatur recusandae voluptatem voluptas sit vel! Recusandae inventore vero
-                        quaerat veritatis perferendis nihil magnam esse officia similique alias, amet quidem voluptatum
-                        quos eum rerum? Laboriosam.
-                    </div> -->
 
                     <div class="body__video">
                         <iframe width="100%" height="100%" src="https://www.youtube.com/embed/DkaUsBwe0fo"

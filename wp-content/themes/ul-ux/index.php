@@ -1,13 +1,27 @@
+<?
+/*
+ * Template name: NEWS
+ * */
+?>
+
 <?php get_header(); ?>
 
-<?php get_template_part('includes/inc', 'top-block-inner'); ?>
-<?php get_template_part('includes/inc', 'breadcrumbs'); ?>
+    <!-- NEWS -->
+    <div class="content-wrapper news-list">
+        index
+        <div class="list__header header">
+            <a href="/" class="link-with-animated-border breadcrumb header__breadcrumbs">На головну</a>
+            <div class="header__title">Новини</div>
+        </div>
 
-<!--CONTENT-->
-<section class="index-page-content content">
-    <div class="container">
-        <?php get_template_part('loop'); ?>
+        <div class="list__body body">
+            <?php get_template_part('loop'); ?>
+            <?php if (function_exists('kama_pagenavi')) kama_pagenavi(); ?>
+        </div>
+
+        <div id="scrollUpBtn" class="scroll-up-btn">Нагору ↑</div>
+
     </div>
-</section>
+
 
 <?php get_footer(); ?>

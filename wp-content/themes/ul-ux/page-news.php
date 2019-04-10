@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: NEWS
+ * Template Name: NEWS-static
  */
 ?>
 <?php get_header(); ?>

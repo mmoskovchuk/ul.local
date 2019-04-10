@@ -160,3 +160,55 @@ function the_truncated_post($symbol_amount) {
     $filtered = strip_tags( preg_replace('@<style[^>]*?>.*?</style>@si', '', preg_replace('@<script[^>]*?>.*?</script>@si', '', apply_filters('the_content', get_the_content()))) );
     echo substr($filtered, 0, strrpos(substr($filtered, 0, $symbol_amount), ' ')) . '...';
 }
+
+//PAGINATION
+//--------------------------------------------------
+function kama_pagenavi($before='', $after='', $echo=true) {
+
+    /* ================ Настройки ================ */
+
+    $num_pages = ''; // сколько ссылок показывать
+
+    $backtext = 'Попередня сторінка'; // текст "перейти на предыдущую страницу". Ставим '', если эта ссылка не нужна.
+    $nexttext = 'Наступна сторінка'; // текст "перейти на следующую страницу". Ставим '', если эта ссылка не нужна.
+    /* ================ Конец Настроек ================ */
+
+    global $wp_query;
+    $paged = (int) $wp_query->query_vars[paged];
+    $max_page = $wp_query->max_num_pages;
+
+    if($max_page <= 1 ) return false; //проверка на надобность в навигации
+
+    if(empty($paged) || $paged == 0) $paged = 1;
+
+    $pages_to_show = intval($num_pages);
+    $pages_to_show_minus_1 = $pages_to_show-1;
+
+    $half_page_start = floor($pages_to_show_minus_1/2); //сколько ссылок до текущей страницы
+    $half_page_end = ceil($pages_to_show_minus_1/2); //сколько ссылок после текущей страницы
+
+    $start_page = $paged - $half_page_start; //первая страница
+    $end_page = $paged + $half_page_end; //последняя страница (условно)
+
+    if($start_page <= 0) $start_page = 1;
+    if(($end_page - $start_page) != $pages_to_show_minus_1) $end_page = $start_page + $pages_to_show_minus_1;
+    if($end_page > $max_page) {
+        $end_page = (int) $max_page;
+    }
+
+    $out=''; //выводим навигацию
+    $out.= $before."<div class='body__pagination pagination'>\n";
+
+
+    if ($paged!=1) {
+        $out.= '<a class="link-with-animated-border pagination__btn" href="'.rtrim(get_pagenum_link(($paged-1)), '/').'">'. $backtext .'</a>';
+    }
+
+    if ($end_page < $max_page) {
+        $out.= '<a class="link-with-animated-border pagination__btn" href="'.get_pagenum_link($paged+1).'">'.$nexttext.'</a>';
+    }
+
+    $out.= "</div>".$after."\n";
+    if ($echo) echo $out;
+    else return $out;
+}
