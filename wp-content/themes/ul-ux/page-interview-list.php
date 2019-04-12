@@ -5,76 +5,69 @@
 ?>
 <?php get_header(); ?>
 
+<?php
+$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 
+
+$stati_children = new WP_Query(array(
+        'posts_per_page' => 4,
+        'post_type' => 'page',
+        'paged' => $paged,
+        'post_parent' => get_the_ID()
+    )
+);
+$published_posts = wp_count_posts()->publish;
+$posts_per_page = $stati_children->query_vars['posts_per_page'];
+$page_number_max = ceil($published_posts / $posts_per_page);
+?>
     <!-- INTERVIEW-LIST -->
     <div class="content-wrapper interview-list">
-
 
         <div class="list__header header">
             <a href="/" class="link-with-animated-border breadcrumb header__breadcrumbs">На головну</a>
             <div class="header__title">Інтерв'ю</div>
         </div>
-
         <div class="list__body body">
 
-            <div class="body__item">
-                <div class="item__info-wrapper">
-                    <div class="img__wrapper">
+            <?php
+            if ($stati_children->have_posts()) :
+                while ($stati_children->have_posts()): $stati_children->the_post();
+                    ?>
+                    <div class="body__item">
+                        <div class="item__info-wrapper">
+                            <div class="img__wrapper">
 
-                        <img src="../img/common-img/1.png" alt="" class="item__img">
-                    </div>
-                    <div class="item__title">Юрій Луценко: «Хрін хто мене зупинить!»</div>
-                </div>
-                <a href="javascript:void(0)" class="link-with-animated-border  item__link-to-read">Читати далі</a>
-            </div>
-            <div class="body__item">
-                <div class="item__info-wrapper">
-                    <div class="img__wrapper">
+                                <?php if (has_post_thumbnail()) : ?>
 
-                        <img src="../img/common-img/2.png" alt="" class="item__img">
-                    </div>
-                    <div class="item__title">Йду, щоб Генеральна прокуратура стала інструментом суспільства задля
-                        справедливості і нормального життя</div>
-                </div>
-                <a href="javascript:void(0)" class="link-with-animated-border  item__link-to-read">Читати далі</a>
-            </div>
-            <div class="body__item">
-                <div class="item__info-wrapper">
-                    <div class="img__wrapper">
+                                    <?php the_post_thumbnail('medium_large', array('class' => 'item__img')); ?>
 
-                        <img src="../img/common-img/3.png" alt="" class="item__img">
+                                <?php else : ?>
+                                    <img src="<?php bloginfo('template_url'); ?>/img/default-img.png"
+                                         alt="<?php bloginfo('name'); ?>" class="item__img"/>
+
+                                <?php endif; ?>
+
+                            </div>
+                            <div class="item__title"><?php the_title(); ?></div>
+                        </div>
+                        <a href="<?php the_permalink(); ?>" class="link-with-animated-border  item__link-to-read">Читати
+                            далі</a>
                     </div>
-                    <div class="item__title">Интервью с Юрием Луценко: "Мои заместители не молятся на генпрокурора"
-                    </div>
-                </div>
-                <a href="javascript:void(0)" class="link-with-animated-border  item__link-to-read">Читати далі</a>
-            </div>
-            <div class="body__item">
-                <div class="item__info-wrapper">
-                    <div class="img__wrapper">
-                        <img src="../img/common-img/4.png" alt="" class="item__img">
-                    </div>
-                    <div class="item__title">Лише із суми успіхів мільйонів складається єдина успішна Україна</div>
-                </div>
-                <a href="javascript:void(0)" class="link-with-animated-border  item__link-to-read">Читати далі</a>
-            </div>
+                <?php
+                endwhile;
+            endif;
+
+            wp_reset_query();
+            ?>
 
             <div class="body__pagination pagination">
-
-                <div class="link-with-animated-border  pagination__btn">
-                    Попередня сторінка
-                </div>
-
-                <div class="link-with-animated-border  pagination__btn">
-                    Наступна сторінка
-                </div>
-
+                <?php if (function_exists("pagination")) {
+                    pagination($stati_children->max_num_pages);
+                } ?>
             </div>
 
         </div>
-
         <div id="scrollUpBtn" class="scroll-up-btn">Нагору ↑</div>
-
     </div>
 
 

@@ -13,7 +13,7 @@
                 <li><a href="/biography" class="link-to-page">Біографія</a></li>
                 <li><a href="/revolutions" class="link-to-page">Українські революції</a></li>
                 <li><a href="/news" class="link-to-page">Новини</a></li>
-                <li><a href="/interview-list" class="link-to-page">Інтерв’ю</a></li>
+                <li><a href="/interview" class="link-to-page">Інтерв’ю</a></li>
                 <li><a href="/books" class="link-to-page">Книги</a></li>
             </ul>
         </nav>

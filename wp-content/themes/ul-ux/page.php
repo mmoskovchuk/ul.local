@@ -1,59 +1,71 @@
 <?php get_header(); ?>
 
-    <!-- TOP-BLOCK -->
-<?php get_template_part('includes/inc', 'top-block'); ?>
+    <div class="content-wrapper interview-page">
     <!-- BREADCRUMBS -->
-<?php get_template_part('includes/inc', 'breadcrumbs'); ?>
-    <!--CONTENT-->
-    <section class="content-block">
-        <div class="container">
-            <div class="content-block__wrap">
+        <div class="common-page__header header">
+            <a href="/" class="link-with-animated-border breadcrumb header__breadcrumbs">На головну
+            </a>
+            <span> / </span>
+            <a href="/interview" class="link-with-animated-border breadcrumb header__breadcrumbs"> Інтерв'ю</a>
+        </div>
 
-                <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 content-block__order-1">
-                    <div class="content-block__default-page">
-                        <?php if (have_posts()) : ?>
-                            <?php while (have_posts()) : the_post(); ?>
-                                <h3>
-                                    <?php the_title(); ?>
-                                </h3>
-                                <?php the_content(); ?>
-                            <?php endwhile; ?>
-                        <?php endif; ?>
-                    </div>
+    <div class="common-page__common common">
+        <div class="common__content">
+<?php if (have_posts()) : ?>
+    <?php while (have_posts()) : the_post(); ?>
+            <div class="common__header">
+                <div class="common__title"><?php the_title(); ?></div>
+                <div class="common__date">
+                    <?php $date .= the_date('j F Y'); ?>
+                    ,&nbsp;
+                    <?php the_time('G:i'); ?>
+                    <!--28 января 2018, 6:54-->
                 </div>
+            </div>
+            <div class="common__body">
+                <div class="body__text">
 
-                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 content-block__order-2 content-block__mobile-margin">
-
-                    <aside class="sidebar">
-
-                        <?php if (is_page(array('298', '123'))): ?>
-                            <!-- SIDEBAR-MENU-BLOCK-DEPARTMENT -->
-                            <?php get_template_part('includes/inc', 'sidebar-menu-block-department'); ?>
-                        <?php endif; ?>
-
-                        <?php if (!is_page(array('298', '123'))): ?>
-
-                            <!-- SIDEBAR-MENU-BLOCK -->
-                            <?php get_template_part('includes/inc', 'sidebar-menu-block'); ?>
-
-
-                            <!-- SIDEBAR-MAP-BLOCK -->
-                            <?php /*get_template_part('includes/inc', 'sidebar-map-block'); */?>
-
-                            <!-- SIDEBAR-POLL-BLOCK -->
-                            <?php get_template_part('includes/inc', 'sidebar-poll-block'); ?>
-
-                            <!-- SIDEBAR-QR-BLOCK -->
-                            <?php get_template_part('includes/inc', 'sidebar-qr-block'); ?>
-
-                        <?php endif; ?>
-
-                    </aside>
+                                <?php the_content(); ?>
 
                 </div>
             </div>
+    <?php endwhile; ?>
+<?php endif; ?>
         </div>
-    </section>
+    </div>
 
+        <div class="common-page__footer footer">
+            <div class="footer__source">
+                <?php
+
+                $link = get_field('interview_source');
+
+                if( $link ):
+                    $link_url = $link['url'];
+                    $link_title = $link['title'];
+                    $link_target = $link['target'] ? $link['target'] : '_self';
+                    ?>
+                    Джерело:
+                    <a href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr($link_target); ?>"><?php echo esc_html($link_title); ?></a>
+                <?php endif; ?>
+            </div>
+
+            <div class="footer__share">
+                <div class="share__text">Поділитись</div>
+                <div class="socials">
+                    <a href="javascript:void(0)" class="social share__social">
+                        <div class="social-facebook"></div>
+                    </a>
+                    <a href="javascript:void(0)" class="social share__social">
+                        <div class="icon-share"></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="scrollUpBtn" class="scroll-up-btn">Нагору ↑</div>
+
+</div>
 
 <?php get_footer(); ?>
