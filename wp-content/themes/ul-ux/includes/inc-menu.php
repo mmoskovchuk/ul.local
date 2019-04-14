@@ -17,7 +17,7 @@
                 <li><a href="/books" class="link-to-page">Книги</a></li>
             </ul>
         </nav>
-        <div class="ul-menu__social">
+        <div class="ul-menu__social" id="menu-social">
             <ul>
                 <li><a href="#" target="_blank"></a></li>
                 <li><a href="#" target="_blank"></a></li>

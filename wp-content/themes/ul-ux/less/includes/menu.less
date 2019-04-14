@@ -199,6 +199,9 @@
 .ul-menu__social {
   position: absolute;
   bottom: 245px;
+  @media (max-width: @mobile-xl) {
+    bottom: 33%;
+  }
   @media (max-width: @mobile-m) {
     bottom: 33%;
   }
@@ -219,15 +222,15 @@
         border: 2px solid #030303;
         transition: 150ms;
 
-        &.active{
+        &.active {
           &:after {
-              content: '';
-              width: 100% !important;
-              height: 2px;
-              display: block;
-              background: black;
-            }
-      }
+            content: '';
+            width: 100% !important;
+            height: 2px;
+            display: block;
+            background: black;
+          }
+        }
         &:hover {
           border-color: #d4d4d4;
         }
@@ -266,7 +269,7 @@
     transition: 300ms;
     @media (max-width: @mobile-xl) {
       content: '';
-      margin-top: 20px;
+      display: none;
     }
   }
 }
@@ -281,6 +284,7 @@
     @media (max-width: @mobile-xl) {
       width: 100%;
       border-bottom: 5px solid #ececec;
+      padding-bottom: 7%;
       margin-top: 20px;
     }
     &:first-child {
