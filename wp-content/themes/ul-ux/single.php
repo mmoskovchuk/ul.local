@@ -3,6 +3,9 @@
  * Template name: NEWS-PAGE
  * */
 ?>
+
+<?php $my_lang = pll_current_language(); // определяем текущий язык ?>
+
 <?php get_header(); ?>
 
 
@@ -20,10 +23,27 @@
         <div class="content-wrapper news-page">
             <!-- BREADCRUMBS -->
             <div class="list__header header breadcrumb">
-                <?php get_template_part('includes/inc', 'breadcrumbs'); ?>
-                <!--<a href="javascript:void(0)" class="link-with-animated-border breadcrumb header__breadcrumbs">На головну</a>
-                <span> / </span>
-                <a href="javascript:void(0)" class="link-with-animated-border breadcrumb header__breadcrumbs">Новини</a>-->
+
+                <?php if ( $my_lang == 'ua' ) : ?>
+
+                    <a href="/" class="link-with-animated-border breadcrumb header__breadcrumbs">На головну</a>
+                    <span> / </span>
+                    <a href="/" class="link-with-animated-border breadcrumb header__breadcrumbs">Новини</a>
+
+                <?php elseif ( $my_lang == 'ru' ) : ?>
+
+                    <a href="/ru/" class="link-with-animated-border breadcrumb header__breadcrumbs">На главную</a>
+                    <span> / </span>
+                    <a href="/ru/novosty/" class="link-with-animated-border breadcrumb header__breadcrumbs">Новости</a>
+
+                <?php elseif ( $my_lang == 'en' ) : ?>
+
+                    <a href="/en/" class="link-with-animated-border breadcrumb header__breadcrumbs">Go to home</a>
+                    <span> / </span>
+                    <a href="/en/news/" class="link-with-animated-border breadcrumb header__breadcrumbs">News</a>
+
+                <?php endif; ?>
+
             </div>
             <div class="common-page__common common">
                 <div class="common__content">
@@ -67,13 +87,14 @@
                         $link_title = $link['title'];
                         $link_target = $link['target'] ? $link['target'] : '_self';
                         ?>
+                        <?php pll_e( 'Source' ); ?>
                         Джерело:
                         <a href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr($link_target); ?>"><?php echo esc_html($link_title); ?></a>
                     <?php endif; ?>
                 </div>
 
                 <div class="footer__share">
-                    <div class="share__text">Поділитись</div>
+                    <div class="share__text"><?php pll_e( 'Share' ); ?></div>
                     <div class="socials">
                         <a href="javascript:void(0)" class="social share__social">
                             <div class="social-facebook"></div>
@@ -86,7 +107,7 @@
             </div>
 
 
-            <div id="scrollUpBtn" class="scroll-up-btn">Нагору ↑</div>
+            <div id="scrollUpBtn" class="scroll-up-btn"><?php pll_e( 'Up' ); ?> ↑</div>
 
         </div>
     <?php endwhile; ?>

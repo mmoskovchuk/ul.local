@@ -212,6 +212,7 @@
     list-style-type: none;
     display: flex;
     li {
+      margin-top: 0 !important;
       margin-right: 30px;
       display: block;
       a {
@@ -307,6 +308,28 @@
       // &:hover:after {
       //   width: 100%;
       // }
+    }
+  }
+}
+
+.ul-menu__lang {
+  position: absolute;
+  bottom: 330px;
+  ul {
+    display: flex;
+    li {
+      margin-top: 0 !important;
+      margin-right: 10px;
+      a {
+        font-size: 17px !important;
+        font-family: @pt-serif-r !important;
+      }
+      &.current-lang {
+        a {
+          font-size: 17px !important;
+          font-family: @pt-serif-b !important;
+        }
+      }
     }
   }
 }

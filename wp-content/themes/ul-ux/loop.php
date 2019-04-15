@@ -1,3 +1,5 @@
+<?php $my_lang = pll_current_language(); // определяем текущий язык ?>
+
 <?php if (have_posts()) : ?>
     <?php while (have_posts()) : the_post(); ?>
         <div id="post-<?php the_ID(); ?>" <?php post_class('body__item'); ?>>
@@ -32,7 +34,7 @@
                     <?php endif; ?>
 
                 </div>
-                <a href="<?php the_permalink(); ?>" class="link-with-animated-border item__link-to-read">Читати далі</a>
+                <a href="<?php the_permalink(); ?>" class="link-with-animated-border item__link-to-read"><?php pll_e( 'Learn more' ); ?></a>
             <?php endif; ?>
 
         </div>

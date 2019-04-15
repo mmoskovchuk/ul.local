@@ -1,13 +1,40 @@
+<?php $my_lang = pll_current_language(); // определяем текущий язык ?>
+
 <?php get_header(); ?>
 
     <div class="content-wrapper interview-page">
     <!-- BREADCRUMBS -->
-        <div class="common-page__header header">
-            <a href="/" class="link-with-animated-border breadcrumb header__breadcrumbs">На головну
-            </a>
-            <span> / </span>
-            <a href="/interview" class="link-with-animated-border breadcrumb header__breadcrumbs"> Інтерв'ю</a>
-        </div>
+
+        <?php if ( $my_lang == 'ua' ) : ?>
+
+            <div class="common-page__header header">
+                <a href="/" class="link-with-animated-border breadcrumb header__breadcrumbs">На головну
+                </a>
+                <span> / </span>
+                <a href="/interview" class="link-with-animated-border breadcrumb header__breadcrumbs"> Інтерв'ю</a>
+            </div>
+
+        <?php elseif ( $my_lang == 'ru' ) : ?>
+
+            <div class="common-page__header header">
+                <a href="/ru/" class="link-with-animated-border breadcrumb header__breadcrumbs">На главную
+                </a>
+                <span> / </span>
+                <a href="/interview" class="link-with-animated-border breadcrumb header__breadcrumbs"> Інтервью</a>
+            </div>
+
+        <?php elseif ( $my_lang == 'en' ) : ?>
+
+            <div class="common-page__header header">
+                <a href="/en/" class="link-with-animated-border breadcrumb header__breadcrumbs">Go to home
+                </a>
+                <span> / </span>
+                <a href="/interview" class="link-with-animated-border breadcrumb header__breadcrumbs"> Interview</a>
+            </div>
+
+        <?php endif; ?>
+
+
 
     <div class="common-page__common common">
         <div class="common__content">

@@ -235,3 +235,16 @@ function pagination() {
         echo '<a class="link-with-animated-border pagination__btn" href="' . get_pagenum_link($paged + 1) . '">Наступна сторінка</a>';
     }
 }
+
+//POLYLANG
+//--------------------------------------------------
+//home
+pll_register_string( 'ul-home__desc', 'Yuri Lutsenko' );
+pll_register_string( 'ul-home__desc1', 'General' );
+pll_register_string( 'ul-home__desc2', 'Prosecutor of Ukraine' );
+//news-list
+pll_register_string( 'item__link-to-read', 'Learn more' );
+//news-page
+pll_register_string( 'scroll-up-btn', 'Up' );
+pll_register_string( 'footer__source', 'Source' );
+pll_register_string( 'share__text', 'Share' );
