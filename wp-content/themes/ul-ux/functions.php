@@ -248,3 +248,12 @@ pll_register_string( 'item__link-to-read', 'Learn more' );
 pll_register_string( 'scroll-up-btn', 'Up' );
 pll_register_string( 'footer__source', 'Source' );
 pll_register_string( 'share__text', 'Share' );
+//biography
+pll_register_string( 'photos__title', 'Photo' );
+pll_register_string( 'photos__title', 'DownloadPhoto' );
+//revolution
+pll_register_string( 'revolution__title1', 'RevolutionTitle1' );
+pll_register_string( 'revolution__title2', 'RevolutionTitle2' );
+pll_register_string( 'revolution__action', 'ReadMore' );
+//books
+pll_register_string( 'download__books', 'DownloadBook' );

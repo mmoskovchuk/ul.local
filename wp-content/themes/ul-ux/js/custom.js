@@ -71,15 +71,35 @@ window.onload = function () {
     var actionBtns = $('.revolution__action');
     if (divsToShow.length != 0 && actionBtns.length != 0) {
         actionBtns.click(function (e) {
-
-            var target = e.target.parentElement.parentElement;
-            divsToShow.not($($(target).children('.revolution__description'))).slideUp()
-            actionBtns.not(this).removeClass('active');
-            actionBtns.not(this).text('Детальніше')
-            $(this).text($(this).text() === 'Згорнути' ? 'Детальніше' : 'Згорнути')
-            $(this).toggleClass('active')
-            $(target).children('.revolution__description').slideToggle();
-            return false; //Prevent the browser jump to the link anchor
+            var url = window.location.href;
+            if(url.indexOf('yuriylutsenko.info/ukrainski-revoliutsii/') != -1) {
+                var target = e.target.parentElement.parentElement;
+                divsToShow.not($($(target).children('.revolution__description'))).slideUp();
+                actionBtns.not(this).removeClass('active');
+                actionBtns.not(this).text('Детальніше');
+                $(this).text($(this).text() === 'Згорнути' ? 'Детальніше' : 'Згорнути');
+                $(this).toggleClass('active');
+                $(target).children('.revolution__description').slideToggle();
+                return false; //Prevent the browser jump to the link anchor
+            } if(url.indexOf('yuriylutsenko.info/ru/ukraynskye-revoliutsyy/') != -1) {
+                var target = e.target.parentElement.parentElement;
+                divsToShow.not($($(target).children('.revolution__description'))).slideUp();
+                actionBtns.not(this).removeClass('active');
+                actionBtns.not(this).text('Детальнее');
+                $(this).text($(this).text() === 'Свернуть' ? 'Детальнее' : 'Свернуть')
+                $(this).toggleClass('active');
+                $(target).children('.revolution__description').slideToggle();
+                return false; //Prevent the browser jump to the link anchor
+            } if(url.indexOf('yuriylutsenko.info/en/ukrainian-revolutions/') != -1) {
+                var target = e.target.parentElement.parentElement;
+                divsToShow.not($($(target).children('.revolution__description'))).slideUp();
+                actionBtns.not(this).removeClass('active');
+                actionBtns.not(this).text('Learn More');
+                $(this).text($(this).text() === 'Roll up' ? 'Learn More' : 'Roll up')
+                $(this).toggleClass('active');
+                $(target).children('.revolution__description').slideToggle();
+                return false; //Prevent the browser jump to the link anchor
+            }
 
         });
     }
@@ -88,7 +108,7 @@ window.onload = function () {
 
 window.onscroll = function () {
     checkScrollUpBtn();
-}
+};
 
 function checkScrollUpBtn() {
     if (document.getElementById("scrollUpBtn")) {

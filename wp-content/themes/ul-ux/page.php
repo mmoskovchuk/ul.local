@@ -11,7 +11,7 @@
                 <a href="/" class="link-with-animated-border breadcrumb header__breadcrumbs">На головну
                 </a>
                 <span> / </span>
-                <a href="/interview" class="link-with-animated-border breadcrumb header__breadcrumbs"> Інтерв'ю</a>
+                <a href="/interv-iu/" class="link-with-animated-border breadcrumb header__breadcrumbs"> Інтерв'ю</a>
             </div>
 
         <?php elseif ( $my_lang == 'ru' ) : ?>
@@ -20,7 +20,7 @@
                 <a href="/ru/" class="link-with-animated-border breadcrumb header__breadcrumbs">На главную
                 </a>
                 <span> / </span>
-                <a href="/interview" class="link-with-animated-border breadcrumb header__breadcrumbs"> Інтервью</a>
+                <a href="/ru/ynterviu/" class="link-with-animated-border breadcrumb header__breadcrumbs"> Інтервью</a>
             </div>
 
         <?php elseif ( $my_lang == 'en' ) : ?>
@@ -29,7 +29,7 @@
                 <a href="/en/" class="link-with-animated-border breadcrumb header__breadcrumbs">Go to home
                 </a>
                 <span> / </span>
-                <a href="/interview" class="link-with-animated-border breadcrumb header__breadcrumbs"> Interview</a>
+                <a href="/en/interview/" class="link-with-animated-border breadcrumb header__breadcrumbs"> Interview</a>
             </div>
 
         <?php endif; ?>
@@ -43,8 +43,7 @@
             <div class="common__header">
                 <div class="common__title"><?php the_title(); ?></div>
                 <div class="common__date">
-                    <?php $date .= the_date('j F Y'); ?>
-                    ,&nbsp;
+                    <?php $date .= the_date('j F Y'); ?>,&nbsp;
                     <?php the_time('G:i'); ?>
                     <!--28 января 2018, 6:54-->
                 </div>
@@ -72,13 +71,13 @@
                     $link_title = $link['title'];
                     $link_target = $link['target'] ? $link['target'] : '_self';
                     ?>
-                    Джерело:
+                    <?php pll_e( 'Source' ); ?>
                     <a href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr($link_target); ?>"><?php echo esc_html($link_title); ?></a>
                 <?php endif; ?>
             </div>
 
             <div class="footer__share">
-                <div class="share__text">Поділитись</div>
+                <div class="share__text"><?php pll_e( 'Share' ); ?></div>
                 <div class="socials">
                     <a href="javascript:void(0)" class="social share__social">
                         <div class="social-facebook"></div>
@@ -91,7 +90,7 @@
         </div>
 
 
-        <div id="scrollUpBtn" class="scroll-up-btn">Нагору ↑</div>
+        <div id="scrollUpBtn" class="scroll-up-btn"><?php pll_e( 'Up' ); ?> ↑</div>
 
 </div>
 

@@ -41,7 +41,7 @@
             <?php if (function_exists('kama_pagenavi')) kama_pagenavi(); ?>
         </div>
 
-        <div id="scrollUpBtn" class="scroll-up-btn">Нагору ↑</div>
+        <div id="scrollUpBtn" class="scroll-up-btn"><?php pll_e( 'Up' ); ?> ↑</div>
 
     </div>
 
