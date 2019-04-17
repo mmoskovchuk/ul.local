@@ -8,19 +8,20 @@
 <?php $my_lang = pll_current_language(); // определяем текущий язык ?>
 
     <?php
-    $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+global $wp_query;
+    $paged1 = (get_query_var('paged')) ? get_query_var('paged') : 1;
 
 
     $stati_children = new WP_Query(array(
             'posts_per_page' => 4,
             'post_type' => 'page',
-            'paged' => $paged,
+            'paged' => $paged1,
             'post_parent' => get_the_ID()
         )
     );
-    $published_posts = wp_count_posts()->publish;
+    $published_posts = $stati_children->found_posts;
     $posts_per_page = $stati_children->query_vars['posts_per_page'];
-    $page_number_max = ceil($published_posts / $posts_per_page);
+    $page_number_max1 = ceil($published_posts / $posts_per_page);
     ?>
 
     <!-- INTERVIEW-LIST -->
@@ -81,7 +82,9 @@
             <div class="body__pagination pagination">
                 <?php if (function_exists("pagination")) {
                     pagination($stati_children->max_num_pages);
-                } ?>
+                }
+
+                ?>
             </div>
 
         </div>

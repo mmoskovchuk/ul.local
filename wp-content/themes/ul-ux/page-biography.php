@@ -980,9 +980,10 @@
                                      alt="<?php echo $image['alt']; ?>"/>
 
                             </div>
+
                             <div class="link-with-animated-border photo__link">
                                 <a class="photo__download" download="ul-<?php echo $image['ID'] ?>.jpg"
-                                   href="<?php echo $image['sizes']['large']; ?>">
+                                   href="<?php echo $image['url']; ?>">
                                     <div class="icon-download"></div>
 
                                     <div class="download-text"><?php pll_e( 'DownloadPhoto' ); ?></div>

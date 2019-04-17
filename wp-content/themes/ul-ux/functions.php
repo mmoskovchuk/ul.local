@@ -167,17 +167,104 @@ function the_truncated_post($symbol_amount)
     echo substr($filtered, 0, strrpos(substr($filtered, 0, $symbol_amount), ' ')) . '...';
 }
 
+//POLYLANG
+//--------------------------------------------------
+//home
+pll_register_string('ul-home__desc', 'Yuri Lutsenko');
+pll_register_string('ul-home__desc1', 'General');
+pll_register_string('ul-home__desc2', 'Prosecutor of Ukraine');
+//news-list
+pll_register_string('item__link-to-read', 'Learn more');
+//news-page
+pll_register_string('scroll-up-btn', 'Up');
+pll_register_string('footer__source', 'Source');
+pll_register_string('share__text', 'Share');
+//biography
+pll_register_string('photos__title', 'Photo');
+pll_register_string('photos__title', 'DownloadPhoto');
+//revolution
+pll_register_string('revolution__title1', 'RevolutionTitle1');
+pll_register_string('revolution__title2', 'RevolutionTitle2');
+pll_register_string('revolution__action', 'ReadMore');
+//books
+pll_register_string('download__books', 'DownloadBook');
+
+
+//PAGINATION INTERVIEW-LIST
+//--------------------------------------------------
+
+function pagination()
+{
+
+    global $paged1, $page_number_max1;
+
+    $my_lang = pll_current_language();
+
+
+    if ($paged1 != 1) {
+
+        if ($my_lang == 'ua') :
+
+        echo '<a class="link-with-animated-border pagination__btn" href="' . rtrim(get_pagenum_link(($paged1 - 1)), '/') . '">Попередня сторінка</a>';
+
+        elseif ($my_lang == 'ru') :
+
+            echo '<a class="link-with-animated-border pagination__btn" href="' . rtrim(get_pagenum_link(($paged1 - 1)), '/') . '">Предыдущая страница</a>';
+
+        elseif ($my_lang == 'en') :
+
+            echo '<a class="link-with-animated-border pagination__btn" href="' . rtrim(get_pagenum_link(($paged1 - 1)), '/') . '">Prev page</a>';
+
+        endif;
+
+    }
+    if ($paged1 < $page_number_max1) {
+
+        if ($my_lang == 'ua') :
+
+        echo '<a class="link-with-animated-border pagination__btn" href="' . get_pagenum_link($paged1 + 1) . '">Наступна сторінка</a>';
+
+        elseif ($my_lang == 'ru') :
+
+            echo '<a class="link-with-animated-border pagination__btn" href="' . get_pagenum_link($paged1 + 1) . '">Следующая страница</a>';
+
+        elseif ($my_lang == 'en') :
+
+            echo '<a class="link-with-animated-border pagination__btn" href="' . get_pagenum_link($paged1 + 1) . '">Next page</a>';
+
+        endif;
+
+    }
+
+}
+
 //PAGINATION NEWS
 //--------------------------------------------------
 function kama_pagenavi($before = '', $after = '', $echo = true)
 {
-
+    $my_lang = pll_current_language();
     /* ================ Настройки ================ */
 
     $num_pages = ''; // сколько ссылок показывать
 
-    $backtext = 'Попередня сторінка'; // текст "перейти на предыдущую страницу". Ставим '', если эта ссылка не нужна.
-    $nexttext = 'Наступна сторінка'; // текст "перейти на следующую страницу". Ставим '', если эта ссылка не нужна.
+
+    if ($my_lang == 'ua') :
+
+        $backtext = 'Попередня сторінка'; // текст "перейти на предыдущую страницу". Ставим '', если эта ссылка не нужна.
+        $nexttext = 'Наступна сторінка'; // текст "перейти на следующую страницу". Ставим '', если эта ссылка не нужна.
+
+    elseif ($my_lang == 'ru') :
+
+        $backtext = 'Предыдущая страница';
+        $nexttext = 'Следующая страница';
+
+    elseif ($my_lang == 'en') :
+
+        $backtext = 'Prev page';
+        $nexttext = 'Next page';
+
+    endif;
+
     /* ================ Конец Настроек ================ */
 
     global $wp_query;
@@ -219,41 +306,3 @@ function kama_pagenavi($before = '', $after = '', $echo = true)
     if ($echo) echo $out;
     else return $out;
 }
-
-
-//PAGINATION INTERVIEW-LIST
-//--------------------------------------------------
-
-function pagination() {
-
-    global $paged, $page_number_max;
-
-    if ($paged != 1) {
-        echo '<a class="link-with-animated-border pagination__btn" href="' . rtrim(get_pagenum_link(($paged - 1)), '/') . '">Попередня сторінка</a>';
-    }
-    if ($paged < $page_number_max-1) {
-        echo '<a class="link-with-animated-border pagination__btn" href="' . get_pagenum_link($paged + 1) . '">Наступна сторінка</a>';
-    }
-}
-
-//POLYLANG
-//--------------------------------------------------
-//home
-pll_register_string( 'ul-home__desc', 'Yuri Lutsenko' );
-pll_register_string( 'ul-home__desc1', 'General' );
-pll_register_string( 'ul-home__desc2', 'Prosecutor of Ukraine' );
-//news-list
-pll_register_string( 'item__link-to-read', 'Learn more' );
-//news-page
-pll_register_string( 'scroll-up-btn', 'Up' );
-pll_register_string( 'footer__source', 'Source' );
-pll_register_string( 'share__text', 'Share' );
-//biography
-pll_register_string( 'photos__title', 'Photo' );
-pll_register_string( 'photos__title', 'DownloadPhoto' );
-//revolution
-pll_register_string( 'revolution__title1', 'RevolutionTitle1' );
-pll_register_string( 'revolution__title2', 'RevolutionTitle2' );
-pll_register_string( 'revolution__action', 'ReadMore' );
-//books
-pll_register_string( 'download__books', 'DownloadBook' );

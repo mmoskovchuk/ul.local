@@ -32,7 +32,7 @@
                     <li><a href="/ukrainski-revoliutsii/" class="link-to-page">Українські революції</a></li>
                     <li><a href="/novyny" class="link-to-page">Новини</a></li>
                     <li><a href="/interv-iu/" class="link-to-page">Інтерв’ю</a></li>
-                    <li><a href="/books" class="link-to-page">Книги</a></li>
+                    <li><a href="/knyhy-ua/" class="link-to-page">Книги</a></li>
                 </ul>
 
             <?php elseif ( $my_lang == 'ru' ) : ?>
@@ -42,7 +42,7 @@
                     <li><a href="/ru/ukraynskye-revoliutsyy/" class="link-to-page">Украинские революции</a></li>
                     <li><a href="/ru/novosty" class="link-to-page">Новости</a></li>
                     <li><a href="/ru/ynterviu/" class="link-to-page">Интервью</a></li>
-                    <li><a href="/books" class="link-to-page">Книги</a></li>
+                    <li><a href="/ru/knyhy/" class="link-to-page">Книги</a></li>
                 </ul>
 
             <?php elseif ( $my_lang == 'en' ) : ?>
@@ -52,7 +52,7 @@
                     <li><a href="/en/ukrainian-revolutions/" class="link-to-page">Ukrainian Revolutions</a></li>
                     <li><a href="/en/news" class="link-to-page">News</a></li>
                     <li><a href="/en/interview/" class="link-to-page">Interview</a></li>
-                    <li><a href="/books" class="link-to-page">Books</a></li>
+                    <li><a href="/en/books/" class="link-to-page">Books</a></li>
                 </ul>
 
             <?php endif; ?>
@@ -63,9 +63,9 @@
 
             <div class="ul-menu__social" id="menu-social">
                 <ul>
-                    <li><a href="#" target="_blank"></a></li>
-                    <li><a href="#" target="_blank"></a></li>
-                    <li><a href="#" target="_blank"></a></li>
+                    <li style="display:none"><a href="#" target="_blank"></a></li>
+                    <li><a href="https://www.facebook.com/LlutsenkoYuri" target="_blank"></a></li>
+                    <li  style="display:none"><a href="#" target="_blank"></a></li>
                 </ul>
             </div>
         </nav>

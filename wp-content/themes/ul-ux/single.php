@@ -28,7 +28,7 @@
 
                     <a href="/" class="link-with-animated-border breadcrumb header__breadcrumbs">На головну</a>
                     <span> / </span>
-                    <a href="/" class="link-with-animated-border breadcrumb header__breadcrumbs">Новини</a>
+                    <a href="/noviny/" class="link-with-animated-border breadcrumb header__breadcrumbs">Новини</a>
 
                 <?php elseif ( $my_lang == 'ru' ) : ?>
 

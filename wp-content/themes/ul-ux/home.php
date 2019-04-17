@@ -4,7 +4,7 @@
  * */
 ?>
 
-<?php $my_lang = pll_current_language(); // определяем текущий язык ?>
+<?php $my_lang = pll_current_language(); // определяем текущий язык?>
 
 <?php get_header(); ?>
 

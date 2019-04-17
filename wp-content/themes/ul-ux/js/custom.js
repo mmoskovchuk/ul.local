@@ -1,4 +1,4 @@
-"use strict";
+
 
 //SIDEBAR MENU
 //-------------------------------------------------
@@ -13,15 +13,32 @@ function ifChecked() {
         } else {
             $(".ul-menu__wrap").removeClass("checked");
         }
-        /*jQuery(function($){
+
+        $(document).ready(function() {
+            function iOSversion() {
+                if (/iP(hone|od|ad)/.test(navigator.platform)) {
+                    // supports iOS 2.0 and later: <https://bit.ly/TJjs1V>
+                    var v = (navigator.appVersion).match(/OS (\d+)_(\d+)_?(\d+)?/);
+                    return [parseInt(v[1], 10), parseInt(v[2], 10), parseInt(v[3] || 0, 10)];
+                }
+            }
+
+            ver = iOSversion();
+
+            if (ver[0] >= 12) {
+
+        jQuery(function($){
             $(document).mouseup(function (e){ // событие клика по веб-документу
-                var div = $("#menu-social"); // тут указываем ID элемента
+                var div = $("#menu-social, .ul-menu__lang"); // тут указываем ID элемента
                 if (!div.is(e.target) // если клик был не по нашему блоку
                     && div.has(e.target).length === 0) { // и не по его дочерним элементам
                     div.hide(); // скрываем его
                 }
             });
-        });*/
+        });
+
+            }
+        });
     });
 
 };
